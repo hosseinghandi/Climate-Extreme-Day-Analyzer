@@ -323,7 +323,7 @@ def average_value(list):
 if run:
     _air_temp, _wind_vel_, _rel_humid = epw_open(EPW)
     date_in_hottestDay, month, day, hottestDay_index = hottest_day_date(_air_temp)
-    Epw_year = "Data provison from {} to {}" .format(max(model_year), min(model_year))
+    Epw_year = f"Data provision from {min(model_year)} to {max(model_year)}"
     avg_temp = max(_air_temp)
     avg_humidity = gh.Average(relative_humidity) 
     wind_velocity_on_hottestDay = wind_speed[hottestDay_index]   
@@ -333,4 +333,4 @@ if run:
         for ta_i, v_i, rh_i in zip(_air_temp, _wind_vel_, _rel_humid)
     ]
     hottest_utci = max(utci_list)
-    period = "{}/{} to {}/{} between 0 and 23 @1" .format(month, day, month, day)
+    period = f"{month}/{day} to {month}/{day} between 0 and 23 @1"
